@@ -8,7 +8,7 @@ import os
 
 
 
-current_dir = os.path.dirname(r"E:\Python - Intellipaat_D\Gen AI\Simple ANN")
+current_dir = os.path.dirname(__file__)
 
 label_encoder_path = os.path.join(current_dir, "label_encoder_gender.pkl")
 one_hot_encoder_path = os.path.join(current_dir, "one_hot_encoder_gro.pkl")
