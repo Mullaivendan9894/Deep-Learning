@@ -7,7 +7,7 @@ import streamlit as st
 
 
 ## Loading the trained model
-model = tf.keras.models.load_model("model.h5")
+model = tf.keras.models.load_model(r"E:\Python - Intellipaat_D\Gen AI\Simple ANN\model.h5")
 
 ## loading the encoders and scalers
 
