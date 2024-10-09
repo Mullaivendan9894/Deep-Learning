@@ -7,7 +7,10 @@ import streamlit as st
 
 
 ## Loading the trained model
-model = tf.keras.models.load_model("model.h5")
+try:
+    model = tf.keras.models.load_model("model.h5")
+except FileNotFoundError:
+    st.error("Model file not found. Please ensure it is included in the directory.")
 
 ## loading the encoders and scalers
 
