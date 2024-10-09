@@ -3,13 +3,13 @@
 This project aims to build a customer churn prediction model using machine learning techniques. The model predicts whether a customer is likely to leave (churn) based on their attributes. A Streamlit web application is provided for users to input customer data and receive predictions in real-time.
 
 ## Technologies Used
-    Python: The primary programming language for this project.
-    Pandas: Used for data manipulation and analysis.
-    NumPy: Used for numerical computations.
-    Scikit-learn: For data preprocessing, including label encoding and scaling.
-    TensorFlow: For building and training the deep learning model.
-    Pickle: For saving and loading the trained model and preprocessing objects.
-    Streamlit: To create an interactive web application for the model.
+Python: The primary programming language for this project.
+Pandas: Used for data manipulation and analysis.
+NumPy: Used for numerical computations.
+Scikit-learn: For data preprocessing, including label encoding and scaling.
+TensorFlow: For building and training the deep learning model.
+Pickle: For saving and loading the trained model and preprocessing objects.
+Streamlit: To create an interactive web application for the model.
     
 ## Files
     model.h5: The trained TensorFlow model for predicting customer churn.
