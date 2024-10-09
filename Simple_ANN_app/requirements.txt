@@ -1,7 +1,7 @@
+streamlit
 tensorflow>=2.16.2
+scikit-learn
+pickle-mixin
+h5py
 pandas
 numpy
-scikit-learn
-tensorboard
-matplotlib
-streamlit
