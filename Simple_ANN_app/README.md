@@ -1,5 +1,5 @@
-## Customer Churn Prediction
-#Overview
+# Customer Churn Prediction
+## Overview
 This project aims to build a customer churn prediction model using machine learning techniques. The model predicts whether a customer is likely to leave (churn) based on their attributes. A Streamlit web application is provided for users to input customer data and receive predictions in real-time.
 
 Technologies Used
