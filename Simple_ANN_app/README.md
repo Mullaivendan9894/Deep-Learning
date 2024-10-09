@@ -46,10 +46,6 @@ The user input is transformed into a suitable format for prediction:
 ### Prediction
 The processed input data is fed into the model to predict the likelihood of customer churn. The prediction probability is then displayed, indicating whether the customer is likely to churn or not.
 
-## Running the Application
-To run the Streamlit application, follow these steps:
-
-1. Ensure you have the necessary libraries installed. You can install them using:
-   ```bash
-   pip install pandas numpy scikit-learn tensorflow streamlit
+### Conclusion
+This project demonstrates the application of machine learning techniques in predicting customer behavior, specifically churn. By using this model, businesses can take proactive measures to retain their customers, ultimately improving their bottom line.
 
