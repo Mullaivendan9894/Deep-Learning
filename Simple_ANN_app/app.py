@@ -14,14 +14,17 @@ except FileNotFoundError:
 
 ## loading the encoders and scalers
 
-with open("label_encoder_gender.pkl", "rb") as file:
-    label_encoder_gender = pickle.load(file)
+try:
+    with open("label_encoder_gender.pkl", "rb") as file:
+        label_encoder_gender = pickle.load(file)
 
-with open("one_hot_encoder_gro.pkl", "rb") as file:
-    one_hot_encoder_geo = pickle.load(file)
+    with open("one_hot_encoder_gro.pkl", "rb") as file:
+        one_hot_encoder_geo = pickle.load(file)
 
-with open("standard_scaler.pkl", "rb") as file:
-    stand_scaler = pickle.load(file)
+    with open("standard_scaler.pkl", "rb") as file:
+        stand_scaler = pickle.load(file)
+except FileNotFoundError:
+    st.error("Model file not found. Please ensure it is included in the directory.")
 
 
 ### Streamlit app
