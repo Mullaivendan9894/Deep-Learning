@@ -4,35 +4,19 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder, StandardScaler
 import tensorflow as tf
 import pickle
 import streamlit as st
-import os
 
-
-
-current_dir = os.path.dirname(__file__)
-
-label_encoder_path = os.path.join(current_dir, "label_encoder_gender.pkl")
-one_hot_encoder_path = os.path.join(current_dir, "one_hot_encoder_gro.pkl")
-scaler_path = os.path.join(current_dir, "standard_scaler.pkl")
 ## Loading the trained model
-try:
-    model = tf.keras.models.load_model("model.h5")
-except FileNotFoundError:
-    st.error("Model file not found. Please ensure it is included in the directory.")
+model = tf.keras.models.load_model("model.h5")
 
 ## loading the encoders and scalers
+with open("label_encoder_gender.pkl", "rb") as file:
+    label_encoder_gender = pickle.load(file)
 
-try:
-    with open("label_encoder_gender.pkl", "rb") as file:
-        label_encoder_gender = pickle.load(file)
+with open("one_hot_encoder_gro.pkl", "rb") as file:
+    one_hot_encoder_geo = pickle.load(file)
 
-    with open("one_hot_encoder_gro.pkl", "rb") as file:
-        one_hot_encoder_geo = pickle.load(file)
-
-    with open("standard_scaler.pkl", "rb") as file:
-        stand_scaler = pickle.load(file)
-except FileNotFoundError:
-    st.error("Model file not found. Please ensure it is included in the directory.")
-
+with open("standard_scaler.pkl", "rb") as file:
+    stand_scaler = pickle.load(file)
 
 ### Streamlit app
 st.title("Customer Churn prediction")
@@ -75,7 +59,6 @@ input_data_scaled = stand_scaler.transform(input_data)
 ## prediction churn
 prediction = model.predict(input_data_scaled)
 prediction_prob = prediction[0][0]
-
 st.write(f"Churn probalility: {prediction_prob:.2f}")
 
 if prediction_prob > 0.5:
