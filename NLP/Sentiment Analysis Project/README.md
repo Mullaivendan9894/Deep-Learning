@@ -1,61 +1,62 @@
 # Sentiment Analysis Project (Natural Language Processing)
 
 ## Overview
-This project focuses on analyzing the sentiment of tweets using Natural Language Processing (NLP) techniques and Deep Learning models. The objective is to classify the sentiment of tweets into three categories: **Negative**, **Neutral**, and **Positive**.
 
----
+This project focuses on analyzing the sentiment of tweets using Natural Language Processing (NLP) techniques and Deep Learning models. The objective is to classify the sentiment of tweets into three categories: **Negative**, **Neutral**, and **Positive**.
 
 ## Steps and Workflow
 
 ### 1. Data Loading and Initial Analysis
-- **Load the dataset** from a CSV file using `pandas`.
-- **Retain relevant columns**: `candidate`, `sentiment`, and `text`.
+- Load the dataset from a CSV file using `pandas`.
+- Retain the relevant columns: `candidate`, `sentiment`, and `text`.
 - Perform an initial inspection of the dataset:
   - Check column data types.
   - Analyze the distribution of sentiment values.
 
----
+### 2. Preprocessing
 
-### 2. Data Preprocessing
+#### a. Text Cleaning
+- Strip HTML tags using `BeautifulSoup`.
+- Replace contractions using the `contractions` library.
+- Remove retweets, non-alphabetical characters, and convert text to lowercase.
+- Remove numbers.
 
-#### Text Cleaning Steps:
-1. **HTML Stripping**: Remove HTML tags from the text.
-2. **Expand Contractions**: Convert contractions like "don't" to "do not".
-3. **Remove Punctuation and Numbers**: Keep only alphabetic characters.
-4. **Tokenization**: Split the text into individual words.
-5. **Stopword Removal**: Remove common words like "is" and "the" that don't add significant meaning.
-6. **Lemmatization**: Reduce words to their base form.
+#### b. Tokenization, Stopword Removal, and Lemmatization
+- Tokenize text using `nltk`.
+- Remove stopwords using the NLTK corpus.
+- Lemmatize words using `WordNetLemmatizer`.
 
-#### Mapping Sentiments and Encoding:
-- Map sentiment values (`Negative`, `Neutral`, `Positive`) to numerical values (`0`, `1`, `2`).
-- Convert sentiment labels into one-hot encoding for training the model.
+### 3. Label Encoding
+- Map sentiment labels (`Negative`, `Neutral`, `Positive`) to numeric values (`0`, `1`, `2`).
+- One-hot encode the numeric labels.
 
----
+### 4. Tokenization and Padding
+- Tokenize preprocessed text using `Tokenizer` from Keras.
+- Convert text to sequences of integers.
+- Pad sequences to ensure uniform length.
 
-### 3. Text Vectorization
-- **Tokenizer**: Convert words into sequences of integers.
-- **Padding**: Ensure all sequences have the same length.
+### 5. Train-Test Split
+- Split the data into training and testing sets (80% train, 20% test).
 
----
+### 6. Word2Vec Embedding
+- Train a Word2Vec model on tokenized text to create word embeddings.
+- Map the embeddings to a matrix to initialize the Embedding layer.
 
-### 4. Model Development
+### 7. Model Architecture
+- Use a sequential model with the following layers:
+  1. **Embedding layer** (pre-trained Word2Vec embeddings, non-trainable).
+  2. **SpatialDropout1D layer**.
+  3. **LSTM layers**.
+  4. **Dense output layer** with softmax activation.
 
-#### Model Architecture:
-1. **Embedding Layer**: Converts words into dense vectors.
-2. **SpatialDropout1D**: Reduces overfitting by randomly setting input elements to zero.
-3. **LSTM Layers**: Capture sequence dependencies in text data.
-4. **Dense Layer**: Outputs class probabilities.
+### 8. Training and Validation
+- Compile the model with Adam optimizer and categorical crossentropy loss.
+- Train the model using the training data and validate it with a split of the training set.
 
-#### Optimizations:
-- **Callbacks**:
-  - `EarlyStopping`: Prevent overfitting by stopping training early if validation loss stops improving.
-  - `ReduceLROnPlateau`: Dynamically adjust the learning rate based on validation loss.
-- **Regularization**:
-  - Added L2 regularization to LSTM layers.
-  - Incorporated dropout layers to improve generalization.
+### 9. Evaluation
+- Plot training vs validation accuracy and loss curves.
+- Evaluate the model on the test set to calculate loss and accuracy.
 
----
-
-### 5. Model Evaluation
-- **Evaluate the trained model** using test data.
-- **Generate predictions** and analyze model performance using metrics like precision, recall, and F1-score.
+### 10. Predictions and Classification Report
+- Make predictions on the test set.
+- Generate a classification report using `sklearn`.
