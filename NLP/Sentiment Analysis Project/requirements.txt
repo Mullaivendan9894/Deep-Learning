@@ -1,0 +1,9 @@
+pandas
+numpy
+matplotlib
+nltk
+beautifulsoup4
+contractions
+scikit-learn
+tensorflow
+gensim
