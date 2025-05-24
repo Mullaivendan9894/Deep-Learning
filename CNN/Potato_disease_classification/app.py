@@ -13,20 +13,15 @@ st.set_page_config(
     page_icon="🥔",
     layout="wide"
 )
-# Debugging info for Streamlit Cloud (optional: remove in production)
+# Optional debugging info for Streamlit Cloud
 st.write("📁 Working directory:", os.getcwd())
 st.write("📄 Files here:", os.listdir())
+
 artifacts_path = Path("artifacts")
 if artifacts_path.exists():
     st.write("📦 Artifacts folder contents:", os.listdir(artifacts_path))
 else:
     st.warning("⚠️ 'artifacts' folder not found!")
-
-try:
-    import cv2
-    st.success(f"OpenCV version: {cv2.__version__}")
-except Exception as e:
-    st.error(f"Failed to import OpenCV: {e}")
 
 # Initialize model (cached)
 @st.cache_resource
