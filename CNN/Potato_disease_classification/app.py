@@ -7,6 +7,12 @@ from prediction_helper import (
     get_recommendation
 )
 
+try:
+    import cv2
+    st.success(f"OpenCV version: {cv2.__version__}")
+except Exception as e:
+    st.error(f"Failed to import OpenCV: {e}")
+
 # Initialize model (cached)
 @st.cache_resource
 def load_model():
