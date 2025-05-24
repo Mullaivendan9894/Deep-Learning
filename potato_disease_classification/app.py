@@ -11,7 +11,7 @@ from prediction_helper import (
 
 # Configure app
 st.set_page_config(
-    page_title="🥔 Potato Disease Detector",
+    page_title="Potato Disease Detector",
     page_icon="🥔",
     layout="wide"
 )
