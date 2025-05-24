@@ -81,7 +81,3 @@ if uploaded_file:
             
         except Exception as e:
             st.error(f"Error: {str(e)}")
-
-# Footer
-st.markdown("---")
-st.caption("For diagnosis confirmation, consult a plant pathologist")
