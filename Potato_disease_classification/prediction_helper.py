@@ -9,11 +9,6 @@ import matplotlib.pyplot as plt
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 artifacts_path = current_dir / "artifacts"
 
-# Debugging info
-print("🔍 Current dir:", current_dir)
-print("📦 Artifacts path:", artifacts_path)
-print("📁 Files in artifacts folder:", os.listdir(artifacts_path) if artifacts_path.exists() else "❌ Folder does not exist!")
-
 # Constants
 CLASSES = {
     0: "Early blight",
