@@ -1,4 +1,6 @@
 import streamlit as st
+import os
+from pathlib import Path
 from PIL import Image
 from prediction_helper import (
     load_potato_model,
