@@ -13,6 +13,14 @@ st.set_page_config(
     page_icon="🥔",
     layout="wide"
 )
+# Debugging info for Streamlit Cloud (optional: remove in production)
+st.write("📁 Working directory:", os.getcwd())
+st.write("📄 Files here:", os.listdir())
+artifacts_path = Path("artifacts")
+if artifacts_path.exists():
+    st.write("📦 Artifacts folder contents:", os.listdir(artifacts_path))
+else:
+    st.warning("⚠️ 'artifacts' folder not found!")
 
 try:
     import cv2
