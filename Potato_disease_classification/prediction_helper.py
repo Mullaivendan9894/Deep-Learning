@@ -4,6 +4,12 @@ from tensorflow.keras.models import load_model
 from pathlib import Path
 import matplotlib.pyplot as plt
 
+import os
+
+print("Current path:", artifacts_path)
+print("Files in artifacts folder:", os.listdir(artifacts_path))
+
+
 # Constants
 CLASSES = {
     0: "Early blight",
