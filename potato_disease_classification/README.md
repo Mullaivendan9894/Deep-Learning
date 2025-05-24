@@ -1,6 +1,6 @@
 # 🥔 Potato Disease Classification using Deep Learning
 
-[![GitHub repo](https://img.shields.io/badge/Repo-Potato_Disease_Classification-blue?logo=github)](https://github.com/Mullaivendan9894/Deep-Learning/tree/master/Potato_disease_classification)
+[![GitHub repo](https://img.shields.io/badge/Repo-Potato_Disease_Classification-blue?logo=github)](https://github.com/Mullaivendan9894/Deep-Learning/tree/master/potato_disease_classification)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.12+-orange?logo=tensorflow)](https://www.tensorflow.org/)
 [![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-ff4b4b?logo=streamlit&logoColor=white)](https://potato-disease-classification-dl.streamlit.app/)
