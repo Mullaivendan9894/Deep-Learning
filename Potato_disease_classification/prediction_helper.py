@@ -4,11 +4,14 @@ from tensorflow.keras.models import load_model
 from pathlib import Path
 import matplotlib.pyplot as plt
 
-import os
+# Properly define artifacts_path before using it
+current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
+artifacts_path = current_dir / "artifacts"
 
-print("Current path:", artifacts_path)
-print("Files in artifacts folder:", os.listdir(artifacts_path))
-
+# Debugging info
+print("🔍 Current dir:", current_dir)
+print("📦 Artifacts path:", artifacts_path)
+print("📁 Files in artifacts folder:", os.listdir(artifacts_path) if artifacts_path.exists() else "❌ Folder does not exist!")
 
 # Constants
 CLASSES = {
@@ -26,8 +29,6 @@ COLORS = {
 # Model Loading
 def load_potato_model():
     """Load and cache the trained model"""
-    current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
-    artifacts_path = current_dir / "artifacts"
     return load_model(artifacts_path / "cnn_model_version_1.keras")
 
 # Image Processing
