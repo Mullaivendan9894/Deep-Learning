@@ -7,6 +7,13 @@ from prediction_helper import (
     get_recommendation
 )
 
+# Configure app
+st.set_page_config(
+    page_title="🥔 Potato Disease Detector",
+    page_icon="🥔",
+    layout="wide"
+)
+
 try:
     import cv2
     st.success(f"OpenCV version: {cv2.__version__}")
@@ -18,12 +25,7 @@ except Exception as e:
 def load_model():
     return load_potato_model()
 
-# Configure app
-st.set_page_config(
-    page_title="🥔 Potato Disease Detector",
-    page_icon="🥔",
-    layout="wide"
-)
+
 
 # UI Components
 def display_result(prediction, col):
