@@ -1,4 +1,6 @@
 import streamlit as st
+import os
+from pathlib import Path
 from PIL import Image
 from prediction_helper import (
     load_potato_model,
@@ -7,17 +9,28 @@ from prediction_helper import (
     get_recommendation
 )
 
-# Initialize model (cached)
-@st.cache_resource
-def load_model():
-    return load_potato_model()
-
 # Configure app
 st.set_page_config(
     page_title="🥔 Potato Disease Detector",
     page_icon="🥔",
     layout="wide"
 )
+# Optional debugging info for Streamlit Cloud
+st.write("📁 Working directory:", os.getcwd())
+st.write("📄 Files here:", os.listdir())
+
+artifacts_path = Path("artifacts")
+if artifacts_path.exists():
+    st.write("📦 Artifacts folder contents:", os.listdir(artifacts_path))
+else:
+    st.warning("⚠️ 'artifacts' folder not found!")
+
+# Initialize model (cached)
+@st.cache_resource
+def load_model():
+    return load_potato_model()
+
+
 
 # UI Components
 def display_result(prediction, col):
