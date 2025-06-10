@@ -1,3 +1,8 @@
+[![GitHub repo](https://img.shields.io/badge/Repo-Car_Damage_Classifier-blue?logo=github)](https://github.com/Mullaivendan9894/Deep-Learning/tree/master/car_damage_classifier)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c?logo=pytorch)](https://pytorch.org/)
+[![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-ff4b4b?logo=streamlit&logoColor=white)](https://car-damage-classifier.streamlit.app/)
+
 # 🚗💥 Car Damage Classifier
 
 A deep learning application that classifies car damage into six distinct categories using **transfer learning with ResNet50**. This project provides predictions via a user-friendly **Streamlit web interface**.
