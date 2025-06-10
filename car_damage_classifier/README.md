@@ -22,6 +22,7 @@ This computer vision system automatically classifies car damage into one of the 
 
 The system is built using **PyTorch** for model development and **Streamlit** for deployment, offering an intuitive way to get damage predictions.
 
+![app_screenshot.png](https://github.com/Mullaivendan9894/Deep-Learning/blob/master/car_damage_classifier/app_screenshot.png)
 ---
 
 ## ✨ Features
