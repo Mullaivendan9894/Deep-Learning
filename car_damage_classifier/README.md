@@ -59,7 +59,7 @@ class CarClassifierRestNet(nn.Module):
 
         # Replace the final classifier
         in_features = self.model.fc.in_features
-        self.model.classifier = nn.Sequential(
+        self.model.fc = nn.Sequential(
             nn.Dropout(0.5),
             nn.Linear(in_features, num_classes)
         )
